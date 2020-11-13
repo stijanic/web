@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+
+</head>
+
+<body>
+
+<button id="1st">Click me!</button>
+<button id="2nd">Me!</button>
+
+<script>
+
+	//bind
+	
+	$('#1st').on('click', function () {
+		console.log('#1st');
+		$('#2nd').slideToggle("slow", function() {
+			$(this).toggleClass("active");
+		});
+	});
+
+	$('#2nd').on('click', function () {
+		console.log('#2nd');
+		$('#1st').slideToggle("slow", function() {
+			$(this).toggleClass("active");
+		});
+	});
+	
+</script>
+
+</body>
+
+</html>

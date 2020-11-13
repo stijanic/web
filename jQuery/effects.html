@@ -1,0 +1,82 @@
+<html>
+	<head>
+	<title>Test</title>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+
+			$('#rest').click( function () {
+				console.log("HERE I AM!!!");
+				$.get('test.txt?age', function(data) {
+					alert("Data: " + data);
+				});
+			});
+
+				
+			jQuery.fn.setColor = function(color) {
+				$(this).css('background', color);
+				$(this).has('b').css('font-size', 20);
+			}
+
+			jQuery.fn.loadTest = function() {
+				$('#that').load('test.txt #that');
+				$('#this').load('test.txt #this');
+				$('#other').load('test.txt #other');
+				$('#same').load('test.txt #same');
+			}
+							
+			jQuery(document).ready(function() { // jQuery() == $()
+					var toggle = 0;
+					var val = $(':input[type=\"text\"]').val();
+					alert(val);
+				$('#button').click(function() {
+					alert($('#here').html());
+
+					$('#here').toggle(); //hide() - show()
+					$('.test').toggle();
+						
+					if (toggle === 0) {
+						$('#button').val('Toogle me');
+						$('h1').fadeOut(3000);
+						$('#hello').slideUp(3000);
+						toggle = 1;
+					} else {
+						$('#button').val('Submit');
+						$('h1').fadeIn(3000);
+						$('#hello').slideDown(3000);
+						toggle = 0;
+					};
+					
+					$('ul li').each(function(e) {
+						if (toggle === 0) {
+							$(this).setColor('green');
+						} else {
+							$(this).setColor('gray');
+							$(this).loadTest();
+						};
+						$(this).append(e)
+					});
+				});
+			});
+	</script>	
+	</head>
+	<body>
+	<h1>Custom Functions</h1>
+	
+	<div id="this">THIS</div>
+	<div id="that">THAT</div>
+	<div id="same">SAME</div>
+	<div id="other">OTHER</div>
+	<div id="rest">REST</div>
+	
+	<ul>
+		<li id="here">This is <b>a</b> here iteam</li>
+		<li class="test">This is a test1 iteam</li>
+		<li>This is an iteam</li>
+		<li class="test">This is <b>a</b> test2 iteam</li>
+		<li id="hello">This is an iteam</li>
+	</ul>
+	<input id="button" value="Submit" type="submit"/>
+	<br>
+	<input value="hey" type="text"/>
+	</body>
+</html>

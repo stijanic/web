@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"> 
+		<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<button onclick="myFunction()">Try it</button>
+
+		<script>
+			function myFunction() {
+				var message = 'Outside the function';
+				
+				function warning(message) {
+					// message = 'Inside the function';
+					alert(message);
+				}
+				warning('Inside the function'); // 'Inside the function'
+				alert(message); // 'Outside the function'
+			}
+			
+			
+		</script>
+	</body>
+</html>

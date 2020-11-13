@@ -1,0 +1,46 @@
+<html>
+
+	<head>
+		<style>
+		.aho {
+			font-size: 40pt;
+			color: red;
+		}
+
+		.aoh {
+			font-size: 40pt;
+			color: blue;
+		}
+		</style>
+		
+		<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<ul>
+			<li class="aho">Clicked <span>0</span> Times</li>
+			<li class="aoh">Clicked <span>0</span> Times</li>
+			<li class="aho">Clicked <span>0</span> Times</li>
+			<li class="aoh">Clicked <span>0</span> Times</li>
+		</ul>
+
+		<script>
+			var obj = {
+				foo : function() {
+					console.log(this);
+				}
+			};
+
+			//call, apply, bind
+			//$('html').on('click', obj.foo);
+	
+			$('li').on('click', function() {
+				console.log('here');
+
+				var currentTimes = parseInt($(this).find('span').html());
+				$(this).find('span').html(currentTimes + 1);
+			});
+		</script>
+	</body>
+
+</html>

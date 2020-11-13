@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+</head>
+
+<body>
+	<script>
+	var a = 1;
+	console.log('Setting this up.');
+	
+	$(document).ready(function () {
+		$('#button').on('click', function () {
+			a = a + 1;
+			alert(a);
+			if (a === 10) {
+				$('#button').off('click');
+			};
+			$(this).val("Stop that!");
+		});
+	});
+	
+	$(function() {
+		$('html').dblclick(function() {
+			alert('Double clicking hurts! Ouch!');
+		}); // end double click
+
+		$('#button').mouseout(function() {
+			alert('Come back!');
+		});
+
+		$('select').change(function() {
+			alert('Changed!');
+			$('select').css('color', 'red');
+		});
+
+		$('select').blur(function() {
+			$('select').css('color', 'blue');
+		});
+
+		$('html').keypress(function(e) {
+			$('.here').append(e.key);
+		});
+	}); // end ready
+	
+	</script>
+
+<select name="sweets" multiple="multiple">
+	<option>Chocolate</option>
+	<option selected="selected">Candy</option>
+	<option>Taffy</option>
+	<option selected="selected">Caramel</option>
+	<option>Fudge</option>
+	<option>Cookie</option>
+</select>
+
+<div class='here'>A! </div>
+
+<input id="button" value="Submit" type="submit"/>
+
+</body>
+
+</html>

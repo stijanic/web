@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Button - Default functionality</title>
+  <!--link rel="stylesheet" href="jquery-ui.css"-->
+  <script src="jquery-1.11.1.js"></script>
+  <script src="jquery-ui.js"></script>
+</head>
+<body>
+   <script>
+		$(function () {
+			$("head").append($("<link rel='stylesheet' type='text/css' href='jquery-ui.css'>")); 
+			$("body").html( "<button>Button</button>" );
+			$("button").button().click(function( event ) {
+				$("button").html(new Date());
+			});
+		});	
+  </script>
+</body>
+</html>

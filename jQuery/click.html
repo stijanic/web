@@ -1,0 +1,27 @@
+<!-- context = this -->
+<html>
+
+<head>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+
+<script>
+	var obj = {
+		foo : function() {
+			console.log(this);
+		}
+	};
+
+	//call, apply, bind
+	$('html').on('click', obj.foo);
+</script>
+</head>
+
+<body>
+Body!
+Body!
+Body!
+Body!
+Body!
+</body>
+
+</html>

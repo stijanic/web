@@ -1,0 +1,36 @@
+<html>
+
+<head>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+		
+	<script>
+		function add(first, second, callback) {
+			console.log(first+second);
+			if (callback) {
+				callback();
+			}
+		}
+	</script>
+	
+	<script>
+		add(2, 3, function () {
+			console.log('done');
+		});
+		add(4, 5, function () {
+			console.log('done again');
+		});
+		add(6, 7);
+		
+		$(document).ready(function () {
+			$('#1st').click(function () {
+				console.log(this);
+				alert(this);
+			});
+		});
+	</script>
+</head>
+
+<body>
+<div id="1st">Nice div!</div>
+</body>
+</html>

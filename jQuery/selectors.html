@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"> 
+		<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<p class="demo">Test!<span>More</span>
+			<div class="demol">Here?<span class="demol">Not here!</span></div>
+		</p>
+		<p class="demos">Test!<span>More</span></p>
+		<h1>Test!<strong>More</strong></h1>
+		<p id="demo">Again!<span>And... again!</span></p>
+		<p class="demot">Again!<span>And... again!</span></p>
+		<h2 class="demoz">
+			Again!<span>And... again!</span>
+			Then...<div class="demop">Fine <span>it is!</span></div>
+		</h2>
+
+		<script>
+			$(document).ready(function() {
+				$('html body h1 strong').css('background-color', 'pink');
+				$('html body div.demol').css('background-color', 'red'); // <p></p> - can only contain inline element,
+				$('html body div.demol span.demol').css('background-color', 'brown'); // not block-level elements
+				$('html body p#demo').css('background-color', 'yellow');
+			}); // end ready
+
+			// Tip: jQuery provides a shortcut method for writing $(document).ready(function() { }:
+			$(function() {
+				$('html body p.demos').css('background-color', 'blue');
+				$('html body p#demo span').css('background-color', 'green');
+				$('html body p.demot span').css('background-color', 'orange');
+				$('html body .demoz .demop span').css('background-color', 'gray');
+				$('html body .demoz div').css('background-color', 'purple');
+			}); // end ready
+		</script>
+	</body>
+</html>

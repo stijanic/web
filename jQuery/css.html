@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	</head>
+<body>
+
+<style>
+
+body {
+	background: linear-gradient(to bottom, blue, white);
+}
+
+p::selection { <!--works on Chrome only 20140831 -->
+	color: red;
+	background-color: pink;
+}
+
+input[type="text"] {
+	text-align: center;
+}
+
+input:focus {
+	background-color: #FF0000;
+}
+
+:first-letter {
+	background-color: green;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 150%;
+	padding: 5px 15px 2px 15px;
+	border-top: 10px dotted rgb(141,165,22);
+	border-bottom: 5px dotted rgb(141,165,22);
+}
+
+#demos {
+	background-color: red;
+}
+
+p.demo {
+	background-color: blue;
+}
+
+#demor {
+	background-color: orange;
+}
+
+#demox {
+	background-color: brown;
+}
+
+.demot #demon {
+	background-color: orange;
+}
+
+.demot #demof {
+	background-color: gray;
+	color: yellow;
+}
+
+div#demok span {
+	background-color: pink;
+}
+
+.contact .name {
+	font-weight: bold;
+}
+
+.contact .phone {
+	color: blue ;
+}
+
+.contact .address {
+	color: red;
+}
+</style>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<p class="demot">
+	<span id="demon">Tu sam!</span><br>
+	<span id="demof">Tu si!</span>
+</p>
+
+<div id="demok">Here!<span>Da!</span></div>
+
+<div id="demox"></div>
+
+<p class="demo"></p>
+<p class="demo"></p>
+<p id="demor"></p>
+<p class="demo"></p>
+<p class="demo"></p>
+<p id="demos"></p>
+<p class="demo"></p>
+
+<div class="contact">
+	<p class="name">John Smith</p>
+	<p class="phone">555-555-1234</p>
+	<p class="address">1234 Elem St</p>
+</div>
+
+<script>
+$(function() {
+	var person = prompt("Please enter your name", "Harry Potter");
+	
+    if (person != null) {
+		for (i = 0; i < document.getElementsByClassName("demo").length; i++) {
+			document.getElementsByClassName("demo")[i].innerHTML =
+			"Hello " + person + "! How are you today?";
+		}
+		document.getElementById('demor').innerHTML = "Greetings " + person + "! How are you today?";
+		document.getElementById('demos').innerHTML = "Saludos " + person + "! How are you today?";
+		document.getElementById('demox').innerHTML = "Bonjour " + person + "! How are you today?";
+	}
+	
+	$('.contact .name').append(' - checked!');
+	$('.contact .phone').append(' - tested!');
+	$('.contact .address').append(' - approved!');
+	
+	$('.demo').each(function () {
+		$(this).append(' - verified!');
+		//console.log(this);
+		//console.log($(this));
+	});
+});
+</script>
+
+<input type="text" name="joke">Type here!!!</input>
+
+</body>
+</html>

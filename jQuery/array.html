@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<button onclick="myFunction()">Try it</button>
+
+		<p class="demo"></p>
+		<p id="demo"></p>
+
+		<script>
+			function myFunction() {
+				var properties = ['red', '14px', 'Arial'];
+				var pushed = properties.push('boldIt', 'boldlyBoldIt');
+				var shifted = properties.unshift('bold', 'boldTwo');
+				var lasted = properties[properties.length] = 'last';
+
+				console.log("Number of items in array: " + pushed + ", " + shifted + ". Last inserted element: " + lasted);
+	
+				document.getElementsByClassName('demo')[0].innerHTML = properties;
+				$('#demo').html(properties);
+			};
+
+			document.write('<p>The first author is <strong>');
+	
+			var authors = [ 'Ernest Hemingway',
+							'Charlotte Bronte',
+							'Dante Alighieri',
+							'Emily Dickinson'
+						];
+
+			for (var i = 0; i < authors.length; i++) {
+				if (i === 0) {
+					document.write(authors[i] + '</strong></p>');
+				}
+				else {
+					document.write('<p>' + authors[i] + '</p>');
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- context = this -->
+<html>
+
+<head>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+
+
+<script>
+$(document).ready(function(){
+	function sayHello2(name) {
+		var text = 'Hello ' + name + " !"; // Local variable
+		var sayAlert = function() {
+			alert("Ready?");
+			$('#test').text(text)
+		};
+		return sayAlert;
+	}
+
+	say2 = sayHello2('Bob');
+
+	say2(); // alerts "Hello Bob"
+});
+</script>
+</head>
+
+<body id="test">
+Body!
+Body!
+Body!
+Body!
+Body!
+</body>
+
+</html>
+
+
+
+
+
+

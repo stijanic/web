@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"> 
+		<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	</head>
+
+	<body>
+		<button onclick="myFunction()">Try it</button>
+
+		<p class="demo"></p>
+		<p id="demo"></p>
+
+		<script>
+			function myFunction() {
+				var first_name = 'Bob'; // a string object
+				var age = 32; // a number object
+				var valid = false; // a boolean object
+				
+				var data = false; // an boolean object
+				console.log(data + ' is ' + typeof data); // boolean appears in console
+				
+				data = 32; //changes to number object			
+				console.log(data + ' is ' + typeof data); // number appears in console
+				
+				console.log(document + ' is ' + typeof document); // object appears in console
+
+				var strange = "54";
+				console.log(isNaN(typeof parseInt(strange))); // true appears in console
+				
+				var big = {
+					first: first_name,
+					second: age
+				};		
+				console.log(big);				
+				console.log(big.first + '\n' + big.second);
+								
+				var x = "Now is the time for all good programmers.";
+				console.log(x.charAt(2)); // 'w' appears
+				
+				var today = new Date();
+				console.log(today);
+				var todayString = today.toDateString()
+				tab.document.body.innerHTML = todayString;
+			}
+		</script>
+	</body>
+</html>

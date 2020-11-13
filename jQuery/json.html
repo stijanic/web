@@ -1,0 +1,59 @@
+<!-- context = this -->
+<html>
+
+<head>
+<style>
+body {
+    border-left: 10px solid #900;
+    border-right: 10px solid #900;
+    border-top: 10px solid #900;
+    border-bottom: 10px solid #900;  
+}
+</style>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+</head>
+
+<body>
+<p>Body!</p>
+
+<script>	
+
+	JSON.parse('{"p": 5}', function (k, v) {
+		if(k === "") return v;     // if topmost value, return it,
+			return v * 2;              // else return v * 2.
+	});                            // { p: 10 }
+
+	JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}', function (k, v) {
+		console.log(k);            // log the current property name, the last is "".
+		return v;                  // return the unchanged property value.
+	});
+
+	
+	var myobj = {};
+	myobj.name="javascriptisawesome";
+	myobj.age=25;
+	myobj.mobile=123456789;
+
+	debugger;
+
+	var str = JSON.stringify(myobj);
+	console.log(str);
+
+	var obj = JSON.parse(str);
+	console.log(obj);
+
+	
+	var objX = JSON.parse('{"name":"Jim Cowart","location":{"city":{"name":"Chattanooga","population":167674},"state":{"name":"Tennessee","abbreviation":"TN","population":6403000}},"company":"appendTo"}');
+	
+	console.log(objX);
+
+	var strX = JSON.stringify(objX);
+	console.log(strX);
+	console.log(objX.location.city.name);
+	console.log(objX['location']['city']['population']);
+		
+</script>
+
+</body>
+
+</html>

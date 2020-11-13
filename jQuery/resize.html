@@ -1,0 +1,35 @@
+<!-- context = this -->
+<html>
+
+<head>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $(window).resize(function(){
+		//console.log($(window).height());   // returns height of browser viewport
+		//console.log($(document).height()); // returns height of HTML document
+		//console.log($(window).width());   // returns width of browser viewport
+		//console.log($(document).width()); // returns width of HTML document
+		
+		console.log($(this).height());
+		console.log($('#test'));
+		$('#test').css("color", "red");
+  });
+});
+</script>
+</head>
+
+<body id="test">
+Body!
+Body!
+Body!
+Body!
+Body!
+</body>
+
+</html>
+
+
+

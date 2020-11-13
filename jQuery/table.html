@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="jquery-ui.css">
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+  
+<style>
+
+.test {
+	color: blue;
+}
+
+.rest {
+	color: red;
+}
+
+dialog {
+	color: red;
+}
+
+body {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 62.5%;
+}
+
+</style>
+<head/>
+
+<body>
+<table>
+	<tbody>
+		<tr">
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+		</tr>
+		<tr">
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+		</tr>
+		<tr>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+		</tr>
+		<tr>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+			<td>Click me!</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<script>
+
+$(document).ready(function(){
+	$('table tbody tr td').addClass('test');
+	//$('p').hide();
+	//$('p').fadeOut();
+	
+	$('tbody').on('click', 'td', function handlerName() {
+	
+		var closesttd = $(this).closest('td');
+	
+		if (closesttd.hasClass('rest')) {
+			closesttd.removeClass('rest').addClass('test');
+		} else if (closesttd.hasClass('test')) {
+			closesttd.removeClass('test').addClass('rest');
+				$('#dialog').dialog({
+					modal: false,
+					buttons: {
+						Ok: function() {
+							$(this).dialog('close');
+							//$('tbody').fadeOut();
+						}
+					}
+				});
+		}
+	});
+});
+</script>
+
+<div id="dialog" title="Basic dialog">
+<p>Test</p>
+</div>
+
+
+</body>
+</html>

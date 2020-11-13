@@ -1,0 +1,45 @@
+
+<!-- context = this -->
+<html>
+
+<head>
+<style>
+body {
+    border-left: 10px solid #900;
+    border-right: 10px solid #900;
+    border-top: 10px solid #900;
+    border-bottom: 10px solid #900;  
+}
+</style>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+</head>
+
+<body>
+<p>Body!</p>
+
+<script>
+	var obj = {
+		foo : function(one, two, three) {
+			//console.log(this === obj);
+			console.log(this === window);
+			if (one != null) {
+				console.log('calc: ' + (one + two + three));
+			}
+		}
+	};
+
+	//call, apply, bind
+	var boundFoo = obj.foo.bind(this);
+		
+	$('body').on('click', function() {
+		boundFoo();
+		//obj.foo();		
+		//obj.foo.call(window, 1, 2, 3);
+		obj.foo.apply(obj, [ 1, 2, 3 ]);
+	});
+	
+</script>
+
+</body>
+
+</html>

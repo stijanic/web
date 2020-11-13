@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"> 
+	</head>
+
+	<body>
+		<script>
+			function factorial (num) {
+				if (num <= 1) {
+					return 1;
+				} else {
+					return num * arguments.callee(num-1);
+				}
+			}
+			
+			var n = prompt("Enter a number.");
+			//console.log(factorial(n));
+			document.body.innerHTML = factorial(n);
+		</script>
+	</body>
+</html>

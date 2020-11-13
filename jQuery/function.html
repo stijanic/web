@@ -1,0 +1,33 @@
+<html>
+
+<head>
+	<script>
+	
+	function calculate(number) {
+		return Math.sqrt(number);
+	}
+	
+	var a = {
+		succes: function(message) {
+			console.log(message);
+		},
+		error: function(message) {
+			console.log(message);
+		},
+		value: "5",
+		result: calculate(3),
+	};
+	
+	a.succes('Setting this up on succes : ' + new Date());
+	a.error('Setting this up on error : ' + new Date());
+	a.succes(a.value);
+	a.succes(calculate(a.value));
+	
+	</script>
+</head>
+
+<body>
+Empty!
+</body>
+
+</html>
