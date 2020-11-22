@@ -2,18 +2,18 @@
 <html ng-app>
 
 <head>
-	<script src='angular.js'></script>
-	<script>
-		function Clock($scope) {
-			$scope.currentTime = new Date();
-		};
-	</script>
-	<title>Welcome to AngularJS</title>
+    <script src='angular.js'></script>
+    <script>
+        function Clock($scope) {
+            $scope.currentTime = new Date();
+        };
+    </script>
+    <title>Welcome to AngularJS</title>
 </head>
 
 <body>
-	<h1>Hello, World.</h1>
-	<p ng-controller='Clock'>The current time is {{currentTime | date:'hh:mm:ss a'}}.</p>
+    <h1>Hello, World.</h1>
+    <p ng-controller='Clock'>The current time is {{currentTime | date:'hh:mm:ss a'}}.</p>
 </body>
 
 </html>

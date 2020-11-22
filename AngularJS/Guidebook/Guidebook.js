@@ -1,4 +1,4 @@
-var guidebookConfig = function($routeProvider) {
+var guidebookConfig = function ($routeProvider) {
   $routeProvider
     .when('/', {
       controller: 'ChaptersController',
