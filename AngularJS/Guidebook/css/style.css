@@ -1,0 +1,38 @@
+h1 {
+  color: darkred;
+}
+
+a:link {
+  text-decoration: none;
+  color: #008b45;
+}
+
+a:hover {
+  color: #00ff00;
+}
+
+a:visited {
+  color: #ee9a00;
+}
+
+ul.notes li.even {
+  background: #555555;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 3px;
+  padding: 0.4em;
+  font-size: 1em;
+  height: 80px;
+  font-family: Verdana, Arial, Sans-Serif;
+}
+
+ul.notes li.odd {
+  background: #eeeeee;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 3px;
+  padding: 0.4em;
+  font-size: 1em;
+  height: 80px;
+  font-family: Verdana, Arial, Sans-Serif;
+}
