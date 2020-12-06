@@ -10,7 +10,7 @@
 
 (js/console.log (document.getElementsByTagName "p"))
 
-(js/alert "Ready for Fibonacci? Check the console: F12!")
+;; (js/alert "Ready for Fibonacci? Check the console: F12!")
 (defn fib [n]
   (if (< n 2) n (+ (fib (- n 1))
                    (fib (- n 2)))))
