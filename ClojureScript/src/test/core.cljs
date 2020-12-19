@@ -1,5 +1,9 @@
 (ns test.core)
 
+(enable-console-print!)
+
+(defn hello [] "Hello There")
+
 (println "Hello worlds in repl!")
 
 (js/console.log "Now? When? Cool! Then?")
@@ -9,10 +13,12 @@
 (js/console.log "Sometimes even less than we think that we think!")
 
 (js/console.log (document.getElementsByTagName "p"))
+(js/console.log (document.getElementsByTagName "h1"))
 
 ;; (js/alert "Ready for Fibonacci? Check the console: F12!")
 (defn fib [n]
   (if (< n 2) n (+ (fib (- n 1))
                    (fib (- n 2)))))
-(println (fib 25))
+(println (fib 35))
+(println (hello))
 (js/console.log (fib 25))
