@@ -1,0 +1,7 @@
+;; CLI: clj/clojure
+;; Help: clj/clojure -M -m figwheel.main -h
+;; Build and Repl: clj/clojure -M -m figwheel.main -b test.core -r
+{:deps  {com.bhauman/figwheel-main {:mvn/version "0.2.12"}
+         ;; add rebel-readline for advanced REPL readline editing
+         com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
+ :paths ["src" "target" "resources"]}
