@@ -5,9 +5,11 @@ sudo firewall-cmd --permanent --zone=public --remove-port=4200/tcp
 sudo firewall-cmd --reload
 ng serve --host 0.0.0.0
 -->
-<h1> {{title}} </h1>
+<h1>{{title}}</h1>
 <app-hello-world></app-hello-world>
 <app-date></app-date>
 <app-address-card [user]="user"></app-address-card>
+<input type="text" [(ngModel)]="inputText">
+<p>{{inputText}}</p>
 
 <router-outlet></router-outlet>
