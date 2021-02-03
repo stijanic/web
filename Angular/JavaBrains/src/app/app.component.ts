@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './address-card/user';
+import { TestService } from './test.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,9 @@ export class AppComponent {
   user: User;
   inputText: string = 'Initial value';
 
-  constructor() {
+  constructor(private svc: TestService) { // dependency injection
+    this.svc.printToConsole("Got the service in AppComponent!");
+
     this.user = new User();
     this.user.name = 'Foo Bar';
     this.user.title = 'Software Developer';
