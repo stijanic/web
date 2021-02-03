@@ -8,8 +8,18 @@ import { User } from './user';
 })
 export class AddressCardComponent implements OnInit {
   @Input("user") user!: User;
+  isCollapsed: boolean = true;
+  buttonText: string = "Expand";
 
   constructor() {
+  }
+
+  toggle() {
+    this.isCollapsed = ! this.isCollapsed;
+    if (this.isCollapsed)
+      this.buttonText = "Expand";
+    else
+      this.buttonText = "Collapse";
   }
 
   ngOnInit(): void {

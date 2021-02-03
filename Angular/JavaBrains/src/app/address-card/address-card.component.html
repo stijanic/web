@@ -2,9 +2,12 @@
 <div class="address-card">
   <h1 class="name">{{user.name}}</h1>
   <h3 class="title">{{user.title}}</h3>
-  <p class="address">{{user.address}}</p>
-  <div *ngIf="user.phone.length > 0"> <!-- just user.phone.length would work as well -->
-    <p class="phone">Phone:</p>
-    <p class="phone" *ngFor="let phoneNumber of user.phone">{{phoneNumber}}</p>
+  <button (click)="toggle()">{{buttonText}}</button>
+  <div *ngIf="!isCollapsed">
+    <p class="address">{{user.address}}</p>
+    <div *ngIf="user.phone.length > 0"> <!-- just user.phone.length would work as well -->
+      <p class="phone">Phone:</p>
+      <p class="phone" *ngFor="let phoneNumber of user.phone">{{phoneNumber}}</p>
+    </div>
   </div>
 </div>
