@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './address-card/user';
 import { TestService } from './test.service';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,10 @@ export class AppComponent {
   title = 'Test';
   user: User;
   inputText: string = 'Initial value';
+  userName!: string;
+  response!: any;
 
-  constructor(private svc: TestService) { // dependency injection
+  constructor(private svc: TestService, private http: HttpClient) { // dependency injection
     this.svc.printToConsole("Got the service in AppComponent!");
 
     this.user = new User();
@@ -26,4 +29,15 @@ export class AppComponent {
     ]
   }
 
+  search() {
+    this.http.get('https://api.github.com/users/' + this.userName)
+    .subscribe((response) => {
+      this.response = response;
+      console.log("Got the response from GIT! => ", response);
+    });
+  }
+  ngOnInit() {
+    let obs = this.http.get('https://api.github.com/users/stijanic');
+    obs.subscribe((response) => console.log("Got the response from GIT! => ", response))
+  }
 }
