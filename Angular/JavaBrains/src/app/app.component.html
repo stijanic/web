@@ -4,8 +4,13 @@ sudo firewall-cmd --permanent --zone=public --add-port=4200/tcp
 sudo firewall-cmd --permanent --zone=public --remove-port=4200/tcp
 sudo firewall-cmd --reload
 ng serve --host 0.0.0.0
+ng build --prod
+http-server dist/test
 -->
 <h1>{{title}}</h1>
+<a routerLink="hello-world">hello-world</a>
+<br>
+<a *ngFor="let route of routes" [routerLink]="route.url">{{route.name}}<br></a>
 <app-hello-world></app-hello-world>
 <app-date></app-date>
 <app-address-card [user]="user"></app-address-card>
@@ -19,7 +24,6 @@ GitHub username: <input type="text" [(ngModel)]="inputText" [(ngModel)]="userNam
 </div>
 <!-- check if response is undefined before accessing it -->
 <p>Number of followers: {{response?.followers}}</p>
-
 <app-view></app-view>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> <!-- To understand better the routing comment out everything except this line -->

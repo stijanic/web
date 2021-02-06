@@ -14,6 +14,9 @@ export class AppComponent {
   inputText: string = 'Initial value';
   userName!: string;
   response!: any;
+  routes = [
+	{url: "date", name: "date"},
+	{url: "hello-world", name: "hello-world"}];
 
   constructor(private svc: TestService, private http: HttpClient) { // dependency injection
     this.svc.printToConsole("Got the service in AppComponent!");
@@ -30,12 +33,13 @@ export class AppComponent {
   }
 
   search() {
-    this.http.get('https://api.github.com/users/' + this.userName)
+    this.svc.getResponse(this.userName)
     .subscribe((response) => {
       this.response = response;
-      console.log("Got the response from GIT! => ", response);
+      console.log("Got the response from TestService! => ", this.response.company);
     });
   }
+
   ngOnInit() {
     let obs = this.http.get('https://api.github.com/users/stijanic');
     obs.subscribe((response) => console.log("Got the response from GIT! => ", response))
