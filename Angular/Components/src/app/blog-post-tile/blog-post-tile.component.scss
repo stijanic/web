@@ -1,7 +1,12 @@
 .blog-btn {
 	font-weight: 900;
+	margin: 1px;
 }
 
 :host {
 	margin: 5px;
+}
+
+.fav {
+	background-color: lightgray;
 }

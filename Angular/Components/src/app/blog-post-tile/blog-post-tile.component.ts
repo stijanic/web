@@ -20,6 +20,10 @@ export class BlogPostTileComponent implements OnInit {
 		console.log(this.fullSummary);
   }
 
+  toggleFav() {
+    this.post.isFav = !this.post.isFav;
+  }
+
   ngOnInit(): void {
 		this.fullSummary = this.post.summary;
   	this.post.summary = this.truncatePipe.transform(this.post.summary, 30);
