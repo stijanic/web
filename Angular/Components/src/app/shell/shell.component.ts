@@ -13,7 +13,7 @@ export class ShellComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterContentInit() {
+    ngAfterContentInit(): void {
     console.log(this.headerElement);
   }
 }
