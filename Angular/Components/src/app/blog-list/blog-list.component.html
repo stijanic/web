@@ -1,4 +1,4 @@
-<a href="#" (click)="expandAll()">Expand all</a>
+<a href="#" class="btn btn-primary blog-btn" (click)="expandAll()">Expand all</a>
 
 <app-blog-post-tile
   #tile
@@ -11,4 +11,5 @@
   (pageNumberClick)="updatePage($event)">
 </app-paginator>
 
-<a class="blog-btn">Test Button</a> <!-- If the component which defines blog-btn CSS class does not encapsulate the View then it's also applied outside of the component: encapsulation: ViewEncapsulation.None -->
+<a class="btn btn-primary blog-btn">Test Button</a>
+<!-- If the component which defines blog-btn CSS class does not encapsulate the View then it's also applied outside of the component: encapsulation: ViewEncapsulation.None -->
