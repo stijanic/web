@@ -20,7 +20,16 @@ export class BlogListComponent implements OnInit {
   }
 
   expandAll(): void {
-    this.blogPostTileComponent.forEach(e => e.showFullSummary());
+    this.blogPostTileComponent.forEach(post => post.showFullSummary());
+  }
+
+  favAll(): void {
+      this.blogPosts[this.currentPage] =
+      this.blogPosts[this.currentPage].map(post => ({
+        title: post.title,
+        summary: post.summary,
+        isFav: true
+      }));
   }
 
   ngOnInit(): void {
