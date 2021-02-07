@@ -18,7 +18,6 @@ export class BlogPostTileComponent implements OnInit {
 
   showFullSummary(): void {
   	this.post.summary = this.fullSummary;
-		console.log(this.fullSummary);
   }
 
   toggleFav() {
