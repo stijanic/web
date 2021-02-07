@@ -19,5 +19,4 @@ export class PaginatorComponent implements OnInit {
   ngOnInit(): void {
   	this.pages = new Array(this.numberOfPages);
   }
-
 }

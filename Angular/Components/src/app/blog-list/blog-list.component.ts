@@ -36,5 +36,4 @@ export class BlogListComponent implements OnInit {
     this.currentPage = 0;
     this.blogPosts = this.blogDataService.getDate();
   }
-
 }

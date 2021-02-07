@@ -1,11 +1,11 @@
-import { Component, OnInit, ContentChild } from '@angular/core';
+import { Component, OnInit, ContentChild, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.scss']
 })
-export class ShellComponent implements OnInit {
+export class ShellComponent implements OnInit, AfterContentInit {
   @ContentChild('appHeader') headerElement: string;
 
   constructor() { }
@@ -13,7 +13,7 @@ export class ShellComponent implements OnInit {
   ngOnInit(): void {
   }
 
-    ngAfterContentInit(): void {
+  ngAfterContentInit(): void {
     console.log(this.headerElement);
   }
 }
