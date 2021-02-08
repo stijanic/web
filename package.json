@@ -4,6 +4,7 @@
   "description": "Some stuff",
   "main": "node.js",
   "scripts": {
+    "postinstall": "npm install --prefix ./Angular/Components && npm run heroku-postbuild --prefix ./Angular/Components",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
