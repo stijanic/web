@@ -2,7 +2,7 @@
   "name": "components",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "./node_modules/.bin/ng build --prod",
+    "heroku-postbuild": "./node_modules/.bin/ng build --aot --prod",
     "ng": "ng",
     "start": "node server.js",
     "_start": "ng serve",
