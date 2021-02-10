@@ -6,6 +6,8 @@
   },
   "dependencies": {
     "body-parser": "1.14.2",
-    "express": "^4.17.1"
+    "debug": ">=2.6.9",
+    "express": "^4.17.1",
+    "qs": ">=6.0.4"
   }
 }
