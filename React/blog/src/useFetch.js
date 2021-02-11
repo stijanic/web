@@ -31,10 +31,10 @@ const useFetch = (url) => {
                         console.log(err.message);
                     }
                 });
-        }, 1); // set the wait time
+        }, 100); // set the wait time
 
         return(() => {
-            console.log('cleanup');
+            //console.log('cleanup');
             abortController.abort();
         });
     }, [url]);
