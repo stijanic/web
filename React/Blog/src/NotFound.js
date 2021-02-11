@@ -5,7 +5,14 @@ const NotFound = () =>  {
         <div className="not-found">
             <h2>Sorry</h2>
             <p>That page cannot be found</p>
-            <Link to="/">Back to the Home...</Link>
+            <br/>
+            <Link to="/" style={{
+                color: "white",
+                padding: '4px',
+                backgroundColor: "#f1356d",
+                borderRadius: '8px',
+                textDecoration: 'none'
+            }}>Back to the Home...</Link>
         </div>
     );
 }

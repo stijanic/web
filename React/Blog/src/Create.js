@@ -14,7 +14,7 @@ const Create = () => {
         
         setIsPending(true);
 
-        console.log(blog);
+        //console.log(blog);
         fetch('http://192.168.245.132:8000/blogs', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },

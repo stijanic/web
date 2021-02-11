@@ -1,9 +1,14 @@
-// git clone git@github.com:iamshaunjp/Complete-React-Tutorial.git
+//
+// git clone git@github.com:iamshaunjp/Complete-React-Tutorial.git && cd Complete-React-Tutorial.git
 // git checkout lesson-32
-// npx create-react-app dojo-blog
+//
+// npx create-react-app blog && cd blog
 // npm install
-// npx json - server--watch data / db.json--port 8000 --host 0.0.0.0
-// npm install react - router - dom@5
+// npm install react-router-dom@5
+//
+// npx json-server --watch data/db.json --port 8000 --host 0.0.0.0
+// npm start
+//
 import './App.css';
 import Navbar from './Navbar';
 import Home from './Home';
@@ -22,13 +27,13 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/create">
+            <Route exact path="/create">
               <Create />
             </Route>
-            <Route path="/blogs/:id">
+            <Route exact path="/blogs/:id">
               <BlogDetails />
             </Route>
-            <Route path="*">
+            <Route exact path="*">
               <NotFound />
             </Route>
           </Switch>
