@@ -31,7 +31,7 @@ const useFetch = (url) => {
                         console.log(err.message);
                     }
                 });
-        }, 1000);
+        }, 1); // set the wait time
 
         return(() => {
             console.log('cleanup');
